@@ -74,13 +74,13 @@ def replace_middle(input_list):
 
 def delete_third_and_seventh(input_list):
     """Remove the third and seventh elements of the input list."""
-    pass
+    del (input_list[2], input_list[5])
 
 def delete_middle(input_list):
     """Remove all elements from the input list except for the first two and the
     last two.
     """
-    pass
+    del (input_list[2:-2])
 
 """
 Part 2: Derived operations on lists
