@@ -56,11 +56,11 @@ def inner_four_end(input_list):
     """Return the sixth, fifth, fourth, and third elements from the end of the
     list, in that order.
     """
-    pass
+    return input_list[-6:-2]
 
 def replace_head(input_list):
     """Replace the head of the input list with the value 42."""
-    pass
+    input_list[0]= 42
 
 def replace_third_and_last(input_list):
     """Replace the third and last elements of the input list with the value 37."""
