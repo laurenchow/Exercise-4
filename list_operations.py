@@ -36,11 +36,11 @@ def init(input_list):
 
 def first_three(input_list):
     """Return the first three elements of the input list."""
-    pass
+    return input_list[0:3]
 
 def last_five(input_list):
     """Return the last five elements of the input list."""
-    pass
+    return input_list[-5:]
 
 def middle(input_list):
     """Return all elements of the input list except the first two and the last
