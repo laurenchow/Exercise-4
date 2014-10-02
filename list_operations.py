@@ -74,13 +74,13 @@ def replace_middle(input_list):
 
 def delete_third_and_seventh(input_list):
     """Remove the third and seventh elements of the input list."""
-    del (input_list[2], input_list[5])
+    del (input_list[6], input_list[2])
 
 def delete_middle(input_list):
     """Remove all elements from the input list except for the first two and the
     last two.
     """
-    del (input_list[2:-2])
+    del input_list[2:-2]
 
 """
 Part 2: Derived operations on lists
@@ -100,16 +100,31 @@ the test_list_operations.py file for concrete examples of expected behavior.
 
 def custom_len(input_list):
     """custom_len(input_list) imitates len(input_list)"""
-    pass
+    length = 0
+    for item in input_list:
+        length = length + 1
+    return length
 
 # For the next four functions, get clever using slice operations described in the first half
 def custom_append(input_list, value):
     """custom_append(input_list, value) imitates input_list.append(value)"""
-    pass
+    length = 0
+    for item in input_list:
+        length = length + 1
+    input_list[length:length] = [value]
+    #why doesn't concatenate work here? Look into.
+ 
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    pass
+    
+    length = 0
+    for item in input_list:
+        length = length + 1
+    
+
+    input_list[length:] = values
+    #why does this work?
 
 def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
