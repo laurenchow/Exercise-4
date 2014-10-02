@@ -64,13 +64,13 @@ def replace_head(input_list):
 
 def replace_third_and_last(input_list):
     """Replace the third and last elements of the input list with the value 37."""
-    pass
+    (input_list[2], input_list[-1]) = (37, 37)
 
 def replace_middle(input_list):
     """Replace all elements of the input list with the the values 42 and 37, in
     that order, except for the first two and last two elements.
     """
-    pass
+    input_list[2:-2]= (42, 37)
 
 def delete_third_and_seventh(input_list):
     """Remove the third and seventh elements of the input list."""
