@@ -139,10 +139,6 @@ def custom_remove(input_list, value):
     length = 0
     for item in input_list:
         length = length + 1
- 
-    
-#    x = 0
- 
     
     for i in range(length):
         if input_list[i] == value:
@@ -150,29 +146,47 @@ def custom_remove(input_list, value):
             break
     
     del input_list[index]
-    #print value_indices
-
-    #for z in range(-1, -(x+1), -1):
-    #    del input_list[value_indices[z]]
- 
-
-#print 1
-#test = [1, 2, 2, 2, 2, 3, 4]
-#custom_remove(test, 2)
-#print test
 
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
-    pass
+        
+    length = 0
+    for item in input_list:
+        length = length + 1
+  
+    last_item = input_list[length-1]
+    del input_list[length-1]
+    return last_item
+
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    pass
+    
+    length = 0
+    for item in input_list:
+        length = length + 1
+    
+    for i in range(length):
+        if input_list[i] == value:
+            index = i
+            break
+    
+    return index
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
-    pass
+    
+    length = 0
+    for item in input_list:
+        length = length + 1
+    
+    count = 0
+    for i in range(length):
+        if input_list[i] == value:
+            count = count + 1
+    
+    return count
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
