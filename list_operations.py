@@ -190,14 +190,54 @@ def custom_count(input_list, value):
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    pass
+    length = 0
+    for item in input_list:
+        length = length + 1
+
+    half_length = length/2
+
+    for i in range(half_length):
+        temp = input_list[i]
+        input_list[i]=input_list[-1-i]
+        input_list[-1-i] = temp
+
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
-    pass
+    length = 0
+    for item in input_list:
+        length = length + 1
+
+    found = False
+    for i in range(length):
+        if input_list[i] == value:
+            found = True
+            break
+    return found
 
 def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-    pass
+
+    some_length = 0
+
+    for item in some_list:
+        some_length = some_length + 1
+
+    another_length = 0
+
+    for item in another_list:
+        another_length = another_length + 1
+
+    equal = True
+    
+    if some_length != another_length:
+        equal = False
+    else:
+        for items in range(some_length):
+            if some_list[items] != another_list[items]:
+                equal = False
+
+    return equal
+
