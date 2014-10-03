@@ -205,19 +205,17 @@ def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-
     some_length = custom_len(some_list)
-
     another_length = custom_len(another_list)
-
     equal = True
     
     if some_length != another_length:
-        equal = False
-    else:
-        for index in range(some_length):
-            if some_list[index] != another_list[index]:
-                equal = False
+        # equal = False
+        return False
+
+    for index in range(some_length):
+        if some_list[index] != another_list[index]:
+            equal = False
 
     return equal
 
