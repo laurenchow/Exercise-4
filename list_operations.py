@@ -108,9 +108,8 @@ def custom_len(input_list):
 # For the next four functions, get clever using slice operations described in the first half
 def custom_append(input_list, value):
     """custom_append(input_list, value) imitates input_list.append(value)"""
-    length = 0
-    for item in input_list:
-        length = length + 1
+    length = custom_len(input_list)
+
     input_list[length:length] = [value]
     #why doesn't concatenate work here? Look into.
  
@@ -118,10 +117,7 @@ def custom_append(input_list, value):
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
     
-    length = 0
-    for item in input_list:
-        length = length + 1
-    
+    length = custom_len(input_list)
 
     input_list[length:] = values
     #why does this work?
@@ -136,10 +132,8 @@ def custom_insert(input_list, index, value):
 def custom_remove(input_list, value):
     """custom_remove(input_list, value) imitates input_list.remove(value)"""
     
-    length = 0
-    for item in input_list:
-        length = length + 1
-    
+    length = custom_len(input_list)
+
     for i in range(length):
         if input_list[i] == value:
             index = i
@@ -151,9 +145,7 @@ def custom_remove(input_list, value):
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
         
-    length = 0
-    for item in input_list:
-        length = length + 1
+    length = custom_len(input_list)
   
     last_item = input_list[length-1]
     del input_list[length-1]
@@ -163,10 +155,8 @@ def custom_pop(input_list):
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
     
-    length = 0
-    for item in input_list:
-        length = length + 1
-    
+    length = custom_len(input_list)
+
     for i in range(length):
         if input_list[i] == value:
             index = i
@@ -177,40 +167,36 @@ def custom_index(input_list, value):
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
     
-    length = 0
-    for item in input_list:
-        length = length + 1
-    
+    length = custom_len(input_list)
+
     count = 0
-    for i in range(length):
-        if input_list[i] == value:
+    for index in range(length):
+        if input_list[index] == value:
             count = count + 1
     
     return count
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    length = 0
-    for item in input_list:
-        length = length + 1
+    
+    length = custom_len(input_list)
 
     half_length = length/2
 
-    for i in range(half_length):
-        temp = input_list[i]
-        input_list[i]=input_list[-1-i]
-        input_list[-1-i] = temp
+    for index in range(half_length):
+        temp = input_list[index]
+        input_list[index]=input_list[-1-index]
+        input_list[-1-index] = temp
 
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
-    length = 0
-    for item in input_list:
-        length = length + 1
+
+    length = custom_len(input_list)
 
     found = False
-    for i in range(length):
-        if input_list[i] == value:
+    for index in range(length):
+        if input_list[index] == value:
             found = True
             break
     return found
@@ -220,23 +206,17 @@ def custom_equality(some_list, another_list):
     (some_list == another_list)
     """
 
-    some_length = 0
+    some_length = custom_len(some_list)
 
-    for item in some_list:
-        some_length = some_length + 1
-
-    another_length = 0
-
-    for item in another_list:
-        another_length = another_length + 1
+    another_length = custom_len(another_list)
 
     equal = True
     
     if some_length != another_length:
         equal = False
     else:
-        for items in range(some_length):
-            if some_list[items] != another_list[items]:
+        for index in range(some_length):
+            if some_list[index] != another_list[index]:
                 equal = False
 
     return equal
